@@ -1,4 +1,3 @@
-![image](https://github.com/mohamedtawfek/DataAnalysis/assets/41310168/5ba3c14c-9ff3-4a46-a965-6547fc4146e2)# DataAnalysis
 Data Analysis tasks
 
 1-Python and SQL: Prepare a shell/python script and SQL analytical functions to read and validate the file data of “Configuration_File_Validation_Task_Data.xlsx” to get validate the data correctness
