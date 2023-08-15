@@ -7,7 +7,7 @@ file = 'D:\Configuration_File_Validation_Task_Data.xlsx'
 df = pd.read_excel(file,sheet_name='Sheet')
 
 #preprocessing the dataset
-
+df.info()
 print(df)
 
 print(df['payment_channel'].unique())
