@@ -1,13 +1,54 @@
 import pandas  as pd
+import numpy as np
 from sqlalchemy import create_engine
 # read the file Configuration_File_Validation_Task_Data.xlsx
 file = 'D:\Configuration_File_Validation_Task_Data.xlsx'
-#make an output file to put the results
-outputfile='output.xlsx'
-#open an engine to be able to run queries
-engine=create_engine('sqlite://',echo=False)
 #reading the file and choose the sheet
 df = pd.read_excel(file,sheet_name='Sheet')
+
+#preprocessing the dataset
+
+print(df)
+
+print(df['payment_channel'].unique())
+print(df['payment_channel'].nunique())
+print(df['payment_channel'].value_counts())
+
+print(df['tier_amount_start'].unique())
+print(df['tier_amount_start'].nunique())
+print(df['tier_amount_start'].value_counts())
+
+print(df['tier_amount_end'].unique())
+print(df['tier_amount_end'].nunique())
+print(df['tier_amount_end'].value_counts())
+
+print(df['tier_fixed_fee_amount'].unique())
+print(df['tier_fixed_fee_amount'].nunique())
+print(df['tier_fixed_fee_amount'].value_counts())
+
+print(df['tier_min_commission'].unique())
+print(df['tier_min_commission'].nunique())
+print(df['tier_min_commission'].value_counts())
+
+print(df['tier_max_commission'].unique())
+print(df['tier_max_commission'].nunique())
+print(df['tier_max_commission'].value_counts())
+
+print(df['tier_percentage_fee'].unique())
+print(df['tier_percentage_fee'].nunique())
+print(df['tier_percentage_fee'].value_counts())
+
+
+
+print(df.isna().sum())
+print(df.duplicated().sum())
+
+#make an output file to put the results
+outputfile='output.xlsx'
+
+#open an engine to be able to run queries
+engine=create_engine('sqlite://',echo=False)
+
 #make a temporary db to can use the queries
 df.to_sql('config',engine,if_exists='replace',index=False)
 
